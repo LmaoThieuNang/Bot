@@ -1,6 +1,7 @@
 import discord
 from discord import app_commands
 from discord.ext import commands
+import os
 
 database = {
     "Kenn": ["k3nn", "abaddon"],
@@ -49,4 +50,5 @@ async def find(interaction: discord.Interaction, username: str):
     else:
         await interaction.response.send_message(f"{username} not found in the database.")
 
-bot.run("Token")
+TOKEN = os.getenv("DISCORD")
+bot.run(TOKEN)
