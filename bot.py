@@ -25,6 +25,7 @@ database = {
 }
 
 intents = discord.Intents.default()
+intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
@@ -52,3 +53,4 @@ async def find(interaction: discord.Interaction, username: str):
 
 TOKEN = os.getenv("DISCORD")
 bot.run(TOKEN)
+
